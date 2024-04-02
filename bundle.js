@@ -13,4 +13,6 @@ input.onchange = (changed) => {
 
 function LoadIfc(ifcData) {
     console.log(ifcData);
+
+
 }

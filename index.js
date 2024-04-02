@@ -1,3 +1,4 @@
+
 const button = document.getElementById("input-button");
 const input = document.getElementById("input-element");
 console.log("button");
@@ -13,4 +14,6 @@ input.onchange = (changed) => {
 
 function LoadIfc(ifcData) {
     console.log(ifcData);
+
+
 }

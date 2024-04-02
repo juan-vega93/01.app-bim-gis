@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    margin: 2rem;
+}
+input{
+    visibility: hidden;
+}
+.container {
+    top:2rem;
+    bottom:2rem;
+    left:2rem;
+    right:2rem;
+    position:absolute;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 2rem;
+}
+
+.button {
+    border: solid 1px black;
+    width: 6rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.button:hover {
+    background-color: skyblue;
+}

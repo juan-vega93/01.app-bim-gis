@@ -1,5 +1,6 @@
-import {Mesh, MeshLambertMaterial, BoxGeometry, Scene, PerspectiveCamera, WebGLRenderer, GridHelper, AxesHelper, AmbientLight, DirectionalLight} from 'three';
+import {Mesh, MeshLambertMaterial, BoxGeometry, Scene, PerspectiveCamera, WebGLRenderer, GridHelper, AxesHelper, AmbientLight, DirectionalLight, CubeUVReflectionMapping, Raycaster, Vector2} from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as dat from 'dat.gui';
 
 const size = {
     width: 800,
@@ -57,6 +58,29 @@ const cubematerial = new MeshLambertMaterial({
 const cube = new Mesh(cubeGeometry, cubematerial);
 
 scene.add(cube);
+
+const gui = new dat.GUI();
+gui.add(cube, 'visible').name('cube visibility');
+gui.add(cube.position,'x',-3,3,0.5).name('cube position');
+
+const raycaster = new Raycaster();
+const mouse = new Vector2();
+
+window.ondblclick = ( event ) => {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    raycaster.setFromCamera(mouse,camera);
+    const intersects = raycaster.intersectObjects(scene.children);
+    if(intersects.length > 0) {
+        const intersect = intersects[0];
+        intersect.object.material.color.r =0;
+        intersect.object.material.color.g =1;
+        intersect.object.material.color.b =0;
+    }
+ 
+}
+
 
 function animate() {
     controls.update();

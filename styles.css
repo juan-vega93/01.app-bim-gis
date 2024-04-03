@@ -3,31 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* h1{
-    margin: 2rem;
+html, body {
+    overflow: hidden;
 }
-input{
-    visibility: hidden;
+#three-canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
 }
-.container {
-    top:2rem;
-    bottom:2rem;
-    left:2rem;
-    right:2rem;
-    position:absolute;
-    background-color: white;
-    border: solid 1px black;
-    border-radius: 2rem;
+#input-element{
+    z-index: 1;
+    position: absolute;
 }
-
-.button {
-    border: solid 1px black;
-    width: 6rem;
-    margin: 1rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    border-radius: 1rem;
-}
-.button:hover {
-    background-color: skyblue;
-} */
